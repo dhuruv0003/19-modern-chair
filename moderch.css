@@ -1,0 +1,434 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family     : 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight     : 400;
+    font-size       : 15px;
+    line-height     : 1.7;
+    color           : #fff;
+    background-color: #1f2829;
+    min-height      : 100vh;
+    overflow-x      : none;
+}
+
+p {
+
+    font-weight: 400;
+    font-size  : 16px;
+    line-height: 1.7;
+    color      : #fff;
+    margin     : 0;
+}
+
+#wrapper {
+    position: relative;
+    display : block;
+    width   : 100%;
+    overflow: hidden;
+}
+
+.container {
+    position : relative;
+    max-width: calc(100%-40px);
+    width    : 860px;
+    margin   : 0 auto;
+    display  : flex;
+    flex-wrap: wrap;
+    padding  : 100px 0;
+}
+
+.section-buttons {
+    position: relative;
+    display: block;
+    width: 100%;
+    /* width: 100%; */
+}
+
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    opacity : 0;
+}
+
+/* div+p matlab div tag ke close hone ke just baad jo p tag ayega usme css ki porpert ko add karo  */
+
+/* checked color button ke khatam hone ke baad baad jo label h usme css add karo */
+.color-btn:checked+label,
+.color-btn:not(:checked)+label {
+    position           : relative;
+    height             : 40px;
+    width              : 40px;
+    border-radius      : 4px;
+    overflow           : hidden;
+    transition         : all 200ms linear;
+    margin-right       : 10px;
+    cursor             : pointer;
+    z-index            : 10;
+    background-position: center;
+    background-size    : cover;
+    box-shadow         : 0 12px 35px 0 rgba(16, 39, 112, 0.25);
+    border             : 3px solid transparent;
+    color              : white;
+    border: 3px solid transparent;
+}
+
+.color-btn:checked+label {
+    border-color: #434343;
+    transform   : scale(1.1);
+}
+
+.color-btn:hover+label {
+    border-color: #434343;
+    transform   : scale(1.1);
+}
+
+label.color1 {
+    margin-left     : 500px;
+    background-image: url(image/color1.jpg);
+}
+
+label.color2 {
+    background-image: url(image/color2.jpg);
+}
+
+label.color3 {
+    background-image: url(image/color3.jpg);
+}
+
+label.color4 {
+    background-image: url(image/color4.jpg);
+}
+
+label.color5 {
+    background-image: url(image/color5.jpg);
+}
+
+label.color6 {
+    background-image: url(image/color6.jpg);
+}
+
+/* parent=container */
+.imgWrap {
+    position           : absolute;
+    top                : 100px;
+    left               : 0;
+    width              : 500px;
+    height             : 410px;
+    display            : inline-block;
+    z-index            : 9;
+    transition         : all 550ms linear;
+    transition-delay   : 100ms;
+    background-position: center top;
+    background-size    : 100%;
+    background-repeat  : no-repeat;
+    background-image   : url(image/chair1.png);
+    opacity            : 0;
+}
+
+/* generic selector ~ */
+.for-color1:checked~.imgWrap.chair1 {
+    opacity  : 1;
+    animation: shake 0.7s cubic-bezier(.36, .07, .19, .97) both;
+}
+
+.imgWrap.chair2 {
+    background-image: url(image/chair2.png);
+}
+
+.for-color2:checked~.imgWrap.chair2 {
+    animation: shake 0.7s cubic-bezier(.36, .07, .19, .97) both;
+    opacity  : 1;
+}
+
+.imgWrap.chair3 {
+    background-image: url(image/chair3.png);
+}
+
+.for-color3:checked~.imgWrap.chair3 {
+    animation: shake 0.7s cubic-bezier(.36, .07, .19, .97) both;
+    opacity  : 1;
+}
+
+.imgWrap.chair4 {
+    background-image: url(image/chair4.png);
+}
+
+.for-color4:checked~.imgWrap.chair4 {
+    animation: shake 0.7s cubic-bezier(.36, .07, .19, .97) both;
+    opacity  : 1;
+}
+
+.imgWrapchair5 {
+    background-image: url(image/chair5.png);
+}
+
+.for-color5:checked~.imgWrap.chair5 {
+    animation: shake 0.7s cubic-bezier(.36, .07, .19, .97) both;
+    opacity  : 1;
+}
+
+.imgWrap.chair6 {
+    background-image: url(image/chair6.png);
+}
+
+.for-color6:checked~.imgWrap.chair6 {
+    animation: shake 0.7s cubic-bezier(.36, .07, .19, .97) both;
+    opacity  : 1;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+.back-Color {
+    position        : fixed;
+    top             : 0;
+    left            : 0;
+    width           : 100%;
+    height          : 100%;
+    display         : block;
+    z-index         : 1;
+    background-image: linear-gradient(196deg, #f1a9a9, #e66767);
+    transition      : all 250ms linear;
+    transition-delay: 300ms;
+    opacity: 0;
+}
+.for-color1:checked~.back-Color.chair1{
+    opacity: 1;
+}
+.for-color2:checked~.back-Color.chair2 {
+    opacity: 1;
+}
+
+.back-Color.chair2 {
+    background-image: linear-gradient(196deg, #302e2e, #2b2424);
+    opacity         : 0;
+}
+
+.for-color3:checked~.back-Color.chair3 {
+    opacity: 1;
+}
+
+.back-Color.chair3 {
+    background-image: linear-gradient(196deg, #3c6f8d, #a0ccdf);
+    opacity         : 0;
+}
+
+.for-color4:checked~.back-Color.chair4 {
+    opacity: 1;
+}
+
+.back-Color.chair4 {
+    background-image: linear-gradient(196deg, #57646e, #306066);
+}
+
+.for-color5:checked~.back-Color.chair5 {
+    opacity: 1;
+}
+
+.back-Color.chair5 {
+    background-image: linear-gradient(196deg, #c3c8b6, #948369);
+}
+
+.for-color6:checked~.back-Color.chair6 {
+    opacity: 1;
+}
+
+.back-Color.chair6 {
+    background-image: linear-gradient(196deg, #232837, #70736a);
+}
+.info-wrap{
+    position: relative;
+    margin-left: 500px;
+    z-index: 11;
+    display: block;
+    text-align: left;
+}
+.title-up{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 700;
+    text-transform: capitalize;
+    /* to capital every first letter */
+    letter-spacing: 1px;
+    font-size: 13px;
+    line-height: 1.2;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+h2{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 800;
+    font-size: 34px;
+    line-height: 1.2;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+h4{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.2;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+h4 span{
+    text-decoration: line-through;
+    font-size: 20px;
+    opacity: 0.6;
+    padding-left: 15px;    
+}
+h5{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+.desc-btn:checked+label,.desc-btn:not(:checked)+label{
+    position: relative;
+    transition: all 200ms linear;
+    display: inline-block;
+    cursor: pointer;
+    /* color: #ffeb77; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.2;
+    color: #fff;
+    margin-right: 25px;
+    opacity: 0.5;
+}
+.desc-btn:checked+label{
+    opacity: 1;
+}
+.desc-btn:not(:checked)+label:hover
+{
+    opacity: 0.8;
+}
+.desc-sec{
+    padding-top: 20px;
+    padding-bottom:30px;
+    transition: all 250ms linear;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(20px);
+}
+#desc-1:checked ~ .desc-sec.accor-1{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+.accor-2{
+    position: relative;
+    bottom: 140px;
+}
+#desc-2:checked ~ .desc-sec.accor-2{
+
+    opacity: 1;
+    pointer-events: auto;
+    
+    transform: translateY(0);
+}
+.section-inline{
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+.section-inline p span{
+    font-size: 30px;
+    line-height: 1.9;
+}
+.btn{
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 2;
+    height: 40px;border-radius: 10px;
+    width: 210px;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    /* overflow: hidden; */
+    /* background-color: transparent; */
+    color: #fff;
+    box-shadow: 0 6px 15px 0 rgba(16,39,112,0.15);
+    transition: all 250ms linear;
+    text-decoration: none;
+    margin-top: 50px;
+    border-radius: 10px;
+    transition: all 1s linear;
+}
+.btn::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;right: 0;top: 0;
+    z-index: -1;
+    background-color: orangered;
+    content: "";
+    
+
+}
+.btn:hover{
+    box-shadow: 0 12px 35px 0 rgba(16, 39, 112, 0.25);
+  background-color: #333;
+}
+
+.for-color2:checked ~ .info-wrap .btn::before{
+    background-image: linear-gradient(196deg, #302e2e, #2b2424);
+    box-shadow: 1px 1px 10px #302e2e;
+    transition: all 1s linear;
+}
+.for-color3:checked ~ .info-wrap .btn::before{
+    background-image: linear-gradient(196deg, #3c6f8d, #a0ccdf);
+    box-shadow: 1px 1px 10px #3c6f8d;
+    transition: all 1s linear;
+}
+.for-color4:checked ~ .info-wrap .btn::before{
+    background-image: linear-gradient(196deg, #57646e, #306066);
+    box-shadow: 1px 1px 10px #306066;
+    transition: all 1s linear;
+}
+.for-color5:checked ~ .info-wrap .btn::before{
+    background-image: linear-gradient(196deg, #c3c8b6, #948369);
+    box-shadow: 1px 1px 10px #948369;
+    transition: all 1s linear;
+}
+.for-color6:checked ~ .info-wrap .btn::before{
+    background-image: linear-gradient(196deg, #232837, #70736a);
+    box-shadow: 1px 1px 5px #70736a;
+    transition: all 1s linear;
+}
